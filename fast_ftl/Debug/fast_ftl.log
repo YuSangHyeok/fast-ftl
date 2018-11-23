@@ -1,0 +1,15 @@
+﻿  filerw.c
+c:\users\user\source\repos\fast_ftl\fast_ftl\filerw.c(17): warning C4013: 'malloc'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\user\source\repos\fast_ftl\fast_ftl\filerw.c(18): warning C4013: 'memset'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\user\source\repos\fast_ftl\fast_ftl\filerw.c(24): warning C4013: 'free'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\user\source\repos\fast_ftl\fast_ftl\filerw.c(36): warning C4013: 'get_pointer'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  main.c
+c:\users\user\source\repos\fast_ftl\fast_ftl\main.c(7): warning C4013: 'initialize'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\user\source\repos\fast_ftl\fast_ftl\main.c(12): warning C4013: 'mapping_h_set'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\user\source\repos\fast_ftl\fast_ftl\main.c(14): warning C4013: 'malloc'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\user\source\repos\fast_ftl\fast_ftl\main.c(18): warning C4013: 'write_hybrid'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\user\source\repos\fast_ftl\fast_ftl\main.c(19): warning C4013: 'read_hybrid'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\user\source\repos\fast_ftl\fast_ftl\main.c(27): warning C4013: 'mapping_h'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\user\source\repos\fast_ftl\fast_ftl\main.c(32): warning C4013: 'free'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  코드를 생성하고 있습니다...
+  fast_ftl.vcxproj -> C:\Users\user\source\repos\fast_ftl\Debug\fast_ftl.exe
