@@ -1,2 +1,2 @@
 # fast-ftl
-FTL(file transfer layer) for flash memory
+FTL(file transfer layer) simulator for flash memory
