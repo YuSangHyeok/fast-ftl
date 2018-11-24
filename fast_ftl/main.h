@@ -1,4 +1,6 @@
 #pragma once
+#include <stdio.h>
+
 #define B_DATA 512		// Byte of data area
 #define B_SPARE 16		// Byte of spare area
 #define B_SECTOR 528	// Byte of sector (B_DATA + B_SPARE)
@@ -13,3 +15,4 @@ typedef struct _Sector {
 	char* data;
 	char* spare;
 } SECTOR;
+

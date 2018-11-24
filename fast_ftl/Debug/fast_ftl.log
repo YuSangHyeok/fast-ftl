@@ -1,8 +1,11 @@
-﻿  main.c
-c:\users\user\desktop\fast_ftl\fast_ftl\main.c(7): warning C4013: 'initialize'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\user\desktop\fast_ftl\fast_ftl\main.c(12): warning C4013: 'mapping_h_set'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\user\desktop\fast_ftl\fast_ftl\main.c(14): warning C4013: 'malloc'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\user\desktop\fast_ftl\fast_ftl\main.c(18): warning C4013: 'write_hybrid'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\user\desktop\fast_ftl\fast_ftl\main.c(19): warning C4013: 'read_hybrid'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\user\desktop\fast_ftl\fast_ftl\main.c(26): warning C4013: 'free'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  fast_ftl.vcxproj -> C:\Users\user\Desktop\fast_ftl\Debug\fast_ftl.exe
+﻿  fast.c
+c:\users\ysh\desktop\fast_ftl2\fast_ftl\fast.c(9): warning C4013: 'malloc'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\ysh\desktop\fast_ftl2\fast_ftl\fast.c(15): warning C4013: 'rand'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\ysh\desktop\fast_ftl2\fast_ftl\fast.c(16): warning C4013: 'memcpy'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\ysh\desktop\fast_ftl2\fast_ftl\fast.c(18): warning C4013: 'write_data'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\ysh\desktop\fast_ftl2\fast_ftl\fast.c(19): warning C4013: 'free'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\ysh\desktop\fast_ftl2\fast_ftl\fast.c(48): warning C4013: 'read_data'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\ysh\desktop\fast_ftl2\fast_ftl\fast.c(72): warning C4013: 'read_hybrid'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\ysh\desktop\fast_ftl2\fast_ftl\fast.c(33): warning C4716: 'fast_write': 값을 반환해야 합니다.
+c:\users\ysh\desktop\fast_ftl2\fast_ftl\fast.c(23): warning C4716: 'log_initialize': 값을 반환해야 합니다.
+  fast_ftl.vcxproj -> C:\Users\YSH\Desktop\fast_ftl2\Debug\fast_ftl.exe
