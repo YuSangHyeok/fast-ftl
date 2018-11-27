@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fast_improved.c" />
     <ClCompile Include="filerw.c" />
     <ClCompile Include="ftl.c" />
     <ClCompile Include="fast.c" />
@@ -125,7 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="filerw.h" />
-    <ClInclude Include="log.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

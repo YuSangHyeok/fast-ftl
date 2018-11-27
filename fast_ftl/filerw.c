@@ -3,7 +3,10 @@
 #include "filerw.h"
 
 extern FILE* f;
+extern int count_read;
+extern int count_write;
 
+// initialize clear flash memory (all 0)
 int initialize(int memSize) {
 	fseek(f, 0, SEEK_SET);
 
@@ -32,6 +35,9 @@ int initialize(int memSize) {
  * return -2 : data is already exist (use IGNORE_USE flag)
  */
 int write_data(int blockNum, int offset, char *data, int function) {
+	// count write
+	count_write++;
+
 	// distinct flag
 	int write_function = function & 0x0F;
 	int ignore_function = function & 0xF0;
@@ -73,9 +79,13 @@ int write_data(int blockNum, int offset, char *data, int function) {
 	return 0;
 }
 
-// return 0 : successfuly readed
-// return -1 : invalid function
+/***** return information ********
+ * return 0 : successfuly readed
+ * return -1 : invalid function
+ */
 int read_data(int blockNum, int offset, char *buf, int function) {
+	// count read;
+	count_read++;
 
 	// file is not exist or already opened.
 	if (f == NULL) {
@@ -128,34 +138,15 @@ int get_pointer(int blockNum, int offset)
 	return (blockNum * B_BLOCK) + (offset * B_SECTOR);
 }
 
-void printBits(size_t const size, void const * const ptr)
-{
-	unsigned char *b = (unsigned char*)ptr;
-	unsigned char byte;
-	int i, j;
-
-	for (i = size - 1; i >= 0; i--)
-	{
-		for (j = 7; j >= 0; j--)
-		{
-			byte = (b[i] >> j) & 1;
-			printf("%u", byte);
-		}
-	}
-	puts("");
-}
-
 // return 1 : is used
 // return 0 : not used
 int used_check(int blockNum, int offset) {
 	char* spare = (char*)malloc(sizeof(char) * B_SPARE);
-	read_data(blockNum, offset, spare, READ_SPARE);
 
+	read_data(blockNum, offset, spare, READ_SPARE);
 	if (spare[0] != 0) {
 		return 1;
 	}
 
 	return 0;
 }
-
-

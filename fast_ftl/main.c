@@ -3,6 +3,9 @@
 #include "filerw.h"
 
 FILE* f = NULL;
+int count_update_read = 0;
+int count_read = 0;
+int count_write = 0;
 
 void main() {
 
@@ -15,22 +18,53 @@ void main() {
 
 	mapping_hybrid_initialize();
 	log_initialize();
+	initialize_log_index();
 
-	char* r = (char*)malloc(sizeof(char)*B_SECTOR);
-	char* w = (char*)malloc(sizeof(char)*B_DATA);
-	sprintf_s(w, sizeof(char)*B_DATA, "123123");
-
-	write_hybrid(3, 6, w, WRITE_DATA);
-	int k = fast_read(3, 6, r, READ_ALL);
-	if (k != 0) {
-		printf("Can't read file: %d\n", k);
-		return;
+	///////////////////////////////////////////////////////////////////
+	/////////////////////// common read ///////////////////////////////
+	///////////////////////////////////////////////////////////////////
+	// initialize read, write count.
+	count_read = 0;
+	count_write = 0;
+	char* r = (char*)malloc(sizeof(char)*B_DATA);
+	
+	// read all sectors in data area
+	for (int i = 0; i < 1600; i++) {
+		int k = fast_read(i/N_SECTOR, i%N_SECTOR, r, READ_DATA);
+		if (k != 0) {
+			printf("Can't read file: %d\n", k);
+			return;
+		}
 	}
-	printf("%s\n", r);
 
-	free(w);
+	// print results
+	printf("\n************* common read *************\n");
+	printf("Read count  : %7d times.\n", count_read);
+	printf("Write count : %7d times.\n", count_write);
+
+	///////////////////////////////////////////////////////////////////
+	////////////////////// improved read //////////////////////////////
+	///////////////////////////////////////////////////////////////////
+	// initialize read, write count.
+	count_read = 0;
+	count_write = 0;
+
+	// read all sectors in data area
+	for (int i = 0; i < 1600; i++) {
+		int k = fast_read_improved(i / N_SECTOR, i%N_SECTOR, r, READ_DATA);
+		if (k != 0) {
+			printf("Can't read file: %d\n", k);
+			return;
+		}
+	}
+
+	// print results
+	printf("\n************ improved read ************\n");
+	printf("Read count  : %7d times.\n", count_read);
+	printf("Write count : %7d times.\n", count_write);
+
+	// free memory & file stream
 	free(r);
-
 	fclose(f);
 	return;
 }
