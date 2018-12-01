@@ -13,13 +13,44 @@ INDEX* root = NULL;
 
 
 void index_add(INDEX index) {
-	INDEX* temp = root;
 
-	while (temp != NULL) {
+	if (root == NULL) {
+		root = (INDEX*)malloc(sizeof(INDEX));
+		root->LPN = index.LPN;
+		root->block = index.block;
+		root->offset = index.offset;
+		root->left = NULL;
+		root->right = NULL;
+		return;
+	}
+
+	INDEX* temp = root;
+	while(1){
 		if (index.LPN > temp->LPN) { // index LPN is bigger than temp
+			if (temp->right == NULL) {
+				temp->right = (INDEX*)malloc(sizeof(INDEX));
+				temp = temp->right;
+				temp->LPN = index.LPN;
+				temp->block = index.block;
+				temp->offset = index.offset;
+				temp->left = NULL;
+				temp->right = NULL;
+				break;
+			}
 			temp = temp->right;
 		}
 		else if (index.LPN < temp->LPN) { // index LPN is smaller than temp
+			if (temp->left == NULL) {
+				temp->left = (INDEX*)malloc(sizeof(INDEX));
+				temp = temp->left;
+				temp->LPN = index.LPN;
+				temp->block = index.block;
+				temp->offset = index.offset;
+				temp->left = NULL;
+				temp->right = NULL;
+				break;
+
+			}
 			temp = temp->left;
 		}
 		else {
@@ -31,6 +62,7 @@ void index_add(INDEX index) {
 	temp->LPN = index.LPN;
 	temp->block = index.block;
 	temp->offset = index.offset;
+
 	return;
 }
 

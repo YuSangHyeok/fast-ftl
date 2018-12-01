@@ -18,7 +18,6 @@ void main() {
 
 	mapping_hybrid_initialize();
 	log_initialize();
-	initialize_log_index();
 
 	///////////////////////////////////////////////////////////////////
 	/////////////////////// common read ///////////////////////////////
@@ -35,6 +34,7 @@ void main() {
 			printf("Can't read file: %d\n", k);
 			return;
 		}
+		//printf("Sector %4d : %s\n", i, r);
 	}
 
 	// print results
@@ -49,6 +49,7 @@ void main() {
 	count_read = 0;
 	count_write = 0;
 
+	initialize_log_index();
 	// read all sectors in data area
 	for (int i = 0; i < 1600; i++) {
 		int k = fast_read_improved(i / N_SECTOR, i%N_SECTOR, r, READ_DATA);
@@ -56,6 +57,7 @@ void main() {
 			printf("Can't read file: %d\n", k);
 			return;
 		}
+		//printf("Sector %4d : %s\n", i, r);
 	}
 
 	// print results
